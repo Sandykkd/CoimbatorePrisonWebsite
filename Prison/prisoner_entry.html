@@ -1,0 +1,82 @@
+<html>
+<head>
+	<link rel="stylesheet" href="prisoner_entry.css">
+	<link rel="stylesheet" href="search/bootstrap.min.css">
+	<script src="search/jquery.min.js"></script>
+	<script src="search/popper.min.js"></script>
+	<script src="search/bootstrap.min.js"></script>
+	<script>
+		history.pushState(null, null, null);
+		window.addEventListener('popstate', function () {
+			history.pushState(null, null, null);
+		});
+		
+	</script>
+	<style>
+		.btn {
+			padding: 10px;
+			font-size: 20px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<section id="welcome">
+		<img src="tamilnadu.png" class="containerlogo">
+		<img src="prison.jpg" class="container1">
+		<p id="head"> TAMILNADU PRISON DEPARTMENT </p>
+		<div class="loginbox">
+			<div class="container-fluid">
+				<form action="prisoner_entry.php" method="POST" id="form">
+					<div class="row">
+						<div class="col-xl-6 ">
+							<div class="search-box">
+								<p class="name">Name</p>
+								<input type="text" name="name" autocomplete="off" id="search"
+									placeholder="Enter name and Fathername" required><br>
+								<div class="result"></div>
+							</div>
+							<p>Mode of Judgement</p><br>
+							<select name="judgement" style="width: 100%;background-color:grey" required
+								class="judgement">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="fiat">Fiat</option>
+								<option value="audi">Audi</option>
+							</select><br><br>
+							<p>Gender</p><br>
+							<select name="gender" style="width: 100%;background-color:grey" required>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+								<option value="Others">Others</option>
+
+							</select><br><br>
+							<p>Amount of Prisoner</p><br>
+							<input type="number" class="amount" name="amount" placeholder="Enter amount"
+								style="width: 100%;background-color:grey" required>
+
+						</div>
+						<div class="col-xl-6 ">
+							<p>Upload Image</p><br>
+							<input type="file" style="background-color: grey;" name="image" placeholder="Upload Image"
+								required><br>
+							<p>Block</p><br>
+							<select name="block" style="width: 100%;background-color:grey">
+								<option value="Block A">Block A</option>
+								<option value="Block B">Block B</option>
+								<option value="Block C">Block C</option>
+								<option value="Block D">Block D</option>
+							</select><br><br><br><br><br>
+							<button type="submit" value="submit" name="button"
+								class="btn btn-danger col-xl-4 offset-xl-4" style="width:50%;" required>Submit</button>
+						</div>
+
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</section>
+</body>
+</html>

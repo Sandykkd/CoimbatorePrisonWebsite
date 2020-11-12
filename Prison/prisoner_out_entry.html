@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="prisoner_out_entry.css">
+    <link rel="stylesheet" href="search/bootstrap.min.css">
+	<script src="search/jquery.min.js"></script>
+	<script src="search/popper.min.js"></script>
+	<script src="search/bootstrap.min.js"></script>
+
+    <!--  jQuery -->
+    <script type="text/javascript" src="search/jquery-1.11.3.min.js"></script>
+
+    <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+    <!-- Bootstrap Date-Picker Plugin -->
+    <script type="text/javascript"
+        src="search/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet"
+        href="search/bootstrap-datepicker3.css" />
+    <link rel="stylesheet" href="search/font-awesome.min.css">
+    <link rel="stylesheet" href="search/bootstrap-social.css">
+    <link rel="stylesheet" href="search/jquery-ui.css">
+    
+    <script src="search/jquery-1.12.4.js"></script>
+    <script src="search/jquery-ui.js"></script>
+
+    <script>
+        history.pushState(null, null, null);
+        window.addEventListener('popstate', function () {
+            history.pushState(null, null, null);
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.search-box input[type="text"]').on("keyup input", function () {
+
+                var inputVal = $(this).val();
+                var resultDropdown = $(this).siblings(".result");
+                if (inputVal.length) {
+                    $.get("search.php", { term: inputVal }).done(function (data) {
+
+                        resultDropdown.html(data);
+                    });
+                } else {
+                    resultDropdown.empty();
+                }
+            });
+
+
+            $(document).on("click", ".result p", function () {
+                $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+                $(this).parent(".result").empty();
+            });
+
+        });
+
+    </script>
+    <style>
+        .btn {
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        p {
+            color: #0099ff
+        }
+ 
+
+    </style>
+
+</head>
+
+<body>
+    <section id="welcome">
+        <img src="tamilnadu.png" class="containerlogo">
+        <img src="prison.jpg" class="container1">
+        <p1 id="head"> TAMILNADU PRISON DEPARTMENT </p1>
+
+
+        <div class="loginbox">
+
+
+            <div class="container-fluid">
+                <form action="prisoner_out_entry.php" method="POST" id="form">
+                    <div class="row">
+
+                        <div class="search-box">
+                            <h5 class="name">Prisoner Name</h5>
+                            <input type="text" name="name" autocomplete="off" id="search"
+                                placeholder="Search name &Fathername" required><br>
+                            <div class="result"></div>
+
+                        </div>
+
+                        <h5>Out Date <input type="text" id="datepicker" name="outdate" placeholder="Enter the outdate" 
+                                required></h5><br>
+
+                        <button type="submit" value="submit" name="button" class="btn btn-danger col-xl-4 offset-xl-4"
+                            style="width:25%;" required>Submit</button>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+    <script>
+        $(function () {
+            $('#datepicker').datepicker();
+        });
+
+    </script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" nonce="970196E321062A4FAB89DF5EA88235C7" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css"/><script src="jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" href="bootstrap.min.css">
+<title>Tamil Nadu Prison Department - About Us</title>
+<style>
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	background-color:#ebdfc4;
+	
+}
+#header_menu {font-size: 15px;	font-weight: bold; color:#CCC;	text-decoration: none;	font-family:Tahoma, Geneva, sans-serif;}
+#header_menu a {font-size: 17px;	font-weight: bold; color:#FF0;	text-decoration: none;	font-family:Tahoma, Geneva, sans-serif;}
+#header_menu a:hover {font-size: 17px;	font-weight: bold; color:#FFF;text-decoration: none;	font-family:Tahoma, Geneva, sans-serif;}
+#header_menu a:current {color:#FFF;}
+.container2{
+float:left;
+height:400px;
+width:400px;
+margin-top:10px;
+margin-left:30px;
+}
+input[type="radio"]
+{
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+       <img src="top_banner.jpg" width="100%" height="150" />
+      
+       <tr>
+        <td colspan="2">
+        <table width="100%" border="0" cellpadding="3" cellspacing="0" bgcolor="#FFFFFF">
+      <tr>
+       
+        <td width="600" height="15" bgcolor="#bb2d0c">
+          <div id="header_menu" align="center"><script language="javascript"> today = new Date(); var str  =today.toString(); document.write(str.substring(0,25)); </script> 
+          				
+          </div>
+          </td>
+
+      </tr>
+      <tr>
+      <td height="15" colspan="3" align="center" valign="middle" bgcolor="#bb2d0c">
+      <div id="header_menu">
+                       <a href="one.html" >Home</a>&nbsp;|&nbsp;
+                       <a href="prisoner_entry_nk.html" >Prisoner Entry</a>&nbsp;|&nbsp;
+			            <a href="one.html" >About us</a>&nbsp;|&nbsp;
+                        <a href="entry.php" >Entry</a>&nbsp;|&nbsp;
+						<a href="main1.php" >Report</a>&nbsp;|&nbsp;
+						<a href="add items.php" >Add Items</a>&nbsp;|&nbsp;
+						<a href="transaction.php" >Transaction</a>&nbsp;&nbsp;|&nbsp;
+						<a href="logout.php" >Logout</a>&nbsp;&nbsp;|&nbsp;
+						
+       </div>
+	   </td>
+	   </tr>
+	   </table>
+
+<div >
+<div id="cd" style="float:left;">
+<img src="jail.jpg" class="container2">
+</div>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12 offset-md-4">
+            <h4>Prison Entry</h4>
+        </div>
+        <div class="col-md-6 offset-md-4">
+            <div class="btn-group">
+                    <button type="button" id="new" class="btn btn-success">New Entry</button>
+                    <button type="button" id="out" class="btn btn-danger" onclick="navigate2()">Out Entry</button>
+            </div>
+                
+        </div>
+    </div>
+    <div class="row mt-5 entry1">
+        <div class="col-12 offset-md-4">
+            <h4>Entry Option</h4>
+        </div>
+        <div class="col-12 offset-md-4">
+                        <img src="avatar.png" class="rounded-circle border border-success" width="100px" height="100px">
+                        <button type="button" id="newe" class="btn btn-success" onclick="navigate()">NEW</button>
+               
+                        <img src="avatar.png" class="rounded-circle border  border-danger" width="100px" height="100px">
+                        <button type="button" id="update" class="btn btn-danger" onclick="navigate1()">UPDATE</button>
+        </div>
+    </div>
+
+
+    
+</div>
+<script>
+    function navigate(){
+        window.open('prisoner_entry.html');
+    }
+    function navigate1(){
+        window.open('search.html');
+    }
+    function navigate2(){
+        window.open('prisoner_out_entry.html');
+    }
+
+    $(document).ready(function(){
+        $(".entry1").hide();
+        $('#new').click(function(){
+            $(".entry1").slideDown(100);
+            $("#out").attr("disabled", true);
+        })
+        $('#out').click(function(){
+            $("#new").attr("disabled", true);
+        })
+        $('#newe').click(function(){
+            $("#update").attr("disabled", true);
+        })
+        $('#update').click(function(){
+            $(".entry1").slideDown(100);
+            $("#newe").attr("disabled", true);
+        })
+    })
+</script>
+</body>
+</html>
